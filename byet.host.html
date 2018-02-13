@@ -1,0 +1,49 @@
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html;charset=utf-8">
+<script type="text/javascript">
+function genid(chars,len) {
+	var l=chars.length;
+	var c=l*4;
+	var id="";
+	for(var i=0;i<len;i++) {
+		id+=chars[Math.floor(Math.random()*c)%l];
+	}
+	console.log(id);
+	return id;
+}
+window.onload=function(){
+	var chars="0123456789abcdef";
+	var id=genid(chars,32);
+	document.getElementById("id").value=id;
+	document.getElementById("updatedetails").action="http://securesignup.net/register.php";
+	document.getElementById("img").src="http://byet.org/image.php?id="+id;
+	console.log(document.getElementById("signup"));
+}
+</script>
+</head>
+<body>
+		<form id="updatedetails" name="updatedetails" class="signup" method=post action="">
+			<table>
+				<div class="form-group">
+				<tr><th>Username<td><input class="form-control" type=text name=username size=20><td>
+				</div>
+
+				<div class="form-group">
+				<tr><th>Password<td><input class="form-control" type=password name=password size=20><td>
+				</div>
+
+				<div class="form-group">
+				<tr><th>Email Address<td><input class="form-control" type=text name=email size=20></td></tr>
+				</div>
+
+				<input name="website_category" type=hidden value="Personal">
+				<input name="website_language" type=hidden value="English">
+				<input id="id" type=hidden name=id value="">
+				<tr><th>Security Code<td><div ><img id="img" width="250px" height="90px" src=""></div><td>
+				<tr><th>Enter Security Code<td><input class="form-control" type=text name=number size=20><td>
+				<tr><th colspan=2><button type="submit" class="btn btn-primary">Submit</button><td></tr>
+			</table>
+		</form>
+</body>
+</html>
