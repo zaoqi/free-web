@@ -4,10 +4,9 @@
 <script type="text/javascript">
 function genid(chars,len) {
 	var l=chars.length;
-	var c=l*4;
 	var id="";
 	for(var i=0;i<len;i++) {
-		id+=chars[Math.floor(Math.random()*c)%l];
+		id+=chars[Math.floor(Math.random()*l)];
 	}
 	console.log(id);
 	return id;
