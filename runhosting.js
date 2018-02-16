@@ -15,6 +15,6 @@
 setTimeout(function(){
 
 console.log('!');
-select_row('1');select_plan_expand_link('tbl_1_row_1_input');
+console.log(document.getElementById('tbl_1_row_1'));
 
 },0);
