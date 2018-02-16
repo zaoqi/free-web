@@ -12,9 +12,21 @@
 
 //  You should have received a copy of the GNU Affero General Public License
 //  along with this program.  If not, see <http://www.gnu.org/licenses/>.
-setTimeout(function(){
+(function(){
+
+var main=function(){
 
 console.log('!');
-console.log(document.getElementById('tbl_1_row_1_input'));
+var tbl_1_row_1_input = document.getElementById('tbl_1_row_1_input');
+if(tbl_1_row_1_input==null) {
+	setTimeout(main, 0);
+} else {
+	console.log(tbl_1_row_1_input.check);
+}
 
-},0);
+
+};
+
+setTimeout(main, 0);
+
+});
